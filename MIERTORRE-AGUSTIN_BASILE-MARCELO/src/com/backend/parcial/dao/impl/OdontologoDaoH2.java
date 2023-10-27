@@ -5,9 +5,9 @@ import com.backend.parcial.dao.IDao;
 import com.backend.parcial.model.Odontologo;
 import org.apache.log4j.Logger;
 
-import java.awt.*;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class OdontologoDaoH2 implements IDao<Odontologo> {
@@ -60,7 +60,7 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
     }
 
     @Override
-    public List listarOdontologos() {
+    public List<Odontologo> listarOdontologos() {
         Connection connection = null;
         java.util.List<Odontologo> odontologo = new ArrayList<>();
 

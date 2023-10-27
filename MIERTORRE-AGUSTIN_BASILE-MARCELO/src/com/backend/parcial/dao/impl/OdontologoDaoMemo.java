@@ -15,7 +15,7 @@ public class OdontologoDaoMemo implements IDao<Odontologo> {
     }
 
     @Override
-    public List listarOdontologos() {
+    public java.util.List<Odontologo> listarOdontologos() {
         return null;
     }
 }
