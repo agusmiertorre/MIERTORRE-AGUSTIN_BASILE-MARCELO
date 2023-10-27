@@ -3,7 +3,9 @@ package com.backend.parcial.test;
 import com.backend.parcial.dao.impl.OdontologoDaoH2;
 import com.backend.parcial.model.Odontologo;
 import com.backend.parcial.service.OdontologoService;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -30,5 +32,15 @@ class OdontologoServiceTest {
                 ex.printStackTrace();
             }
         }
+    }
+    @Test
+    void deberiaAgregarUnPaciente(){
+
+        Odontologo odontologo = new Odontologo(1234, "Agustin", "Mier Torre");
+
+        Odontologo odontologoRegistrado = odontologoService.registrarOdontologo(odontologo);
+
+        Assertions.assertTrue(odontologoRegistrado.getId() != 0);
+
     }
 }
