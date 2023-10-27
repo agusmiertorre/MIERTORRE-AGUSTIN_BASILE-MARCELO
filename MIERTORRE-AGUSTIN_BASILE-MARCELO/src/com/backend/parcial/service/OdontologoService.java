@@ -1,14 +1,16 @@
 package com.backend.parcial.service;
 
-import com.backend.clase.dao.IDao;
-import com.backend.clase.model.Medicamento;
+import com.backend.parcial.dao.IDao;
 import com.backend.parcial.model.Odontologo;
+
+import java.util.List;
+
 
 public class OdontologoService {
         private IDao<Odontologo> odontologoIDao;
 
 
-    public MedicamentoService(IDao<Odontologo> odontologoIDaoIDao) {
+    public OdontologoService(IDao<Odontologo> odontologoIDaoIDao) {
         this.odontologoIDao = odontologoIDao;
     }
 
@@ -16,9 +18,10 @@ public class OdontologoService {
         return odontologoIDao.registrar(odontologo);
     }
 
-    public odontologo buscarMedicamentoPorId(int id) {
-        return medicamentoIDao.buscarPorId(id);
+    public List<Odontologo> listarPacientes(){
+        return odontologoIDao.listarOdontologos();
     }
+
 
 
 }
